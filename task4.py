@@ -10,9 +10,9 @@ import sys
 # Використовуйте словник Python для зберігання імен і номерів телефонів. Ім'я буде ключем, а номер телефону – значенням.
 # Ваша програма має вміти ідентифікувати та повідомляти про неправильно введені команди.
 
-phones = {
-    'Vladyslav': '560200'
-}
+# !
+# Майже правильно. Тільки змінну contacts треба створювати в змінній main. Створювати змінну в глобальному просторі - погана практика."
+
 
 
 def parse_input(user_input: str):
@@ -62,24 +62,30 @@ def show_all_contacts(phones):
 
 def main():
     print('Welcome to the assistant bot!')
+
+    contacts = {
+        'Vladyslav': '560200'
+    }
+
     while True:
         user_input = input('Enter a command: ')
         command, *args = parse_input(user_input)
+
         if command in ['exit', 'close', 'quit']:
             print('Bye bye!!!')
             break
         elif command in ['hi', 'hello']:
             print('How I can help you?')
         elif command == 'add':
-            print(add_contact(args, phones))
+            print(add_contact(args, contacts))
         elif command == 'change':
-            print(change_contact(args, phones))
+            print(change_contact(args, contacts))
         elif command == 'phone':
-            print(show_phone(args, phones))
+            print(show_phone(args, contacts))
         elif command == 'show':
-            print(show_name(args, phones))
+            print(show_name(args, contacts))
         elif command == 'all':
-            print(show_all_contacts(phones))
+            print(show_all_contacts(contacts))
         else:
             print('Invalid command')
 
