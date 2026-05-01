@@ -7,6 +7,11 @@ from pathlib import Path
 # Файл містить дані про котів, де кожен запис містить унікальний ідентифікатор, ім'я кота та його вік.
 # Функція має повертати список словників, де кожен словник містить інформацію про одного кота.
 
+# !
+# Тільки не треба було переводити в int. Якщо явно не сказано, що треба отримати числа, то краще залишити str. 
+# Доречі там і в прикладі залишився str
+
+
 cats_file = Path('files/cats_file.txt')
 
 
@@ -20,7 +25,7 @@ def get_cats_info(path: Path) -> list[dict]:
                     try:
                         cat_id, name, age = parts
                         result.append(
-                            {'id': cat_id, 'name': name, 'age': int(age)})
+                            {'id': cat_id, 'name': name, 'age': age})
                     except ValueError:
                         continue
         return result
