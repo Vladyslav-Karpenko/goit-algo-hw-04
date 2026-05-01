@@ -1,37 +1,11 @@
-# --- Python ---
-__pycache__/
-*.py[cod]
-*$py.class
 
 # Virtual environments
 venv/
 .env/
 .venv/
 
-# Packaging / build
-build/
-dist/
-*.egg-info/
-.eggs/
-
-# Logs
-*.log
-
-# IDE
-.vscode/
-.idea/
 
 # --- macOS ---
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in directories
-.Spotlight-V100
-.Trashes
-
-# iCloud
-*.icloud
